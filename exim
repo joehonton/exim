@@ -1,0 +1,26 @@
+#!/bin/bash
+#==============================================================================
+#
+# File:         exim/exim
+# Language:     Bash
+# Copyright:    Joe Honton © 2015
+# License:      CC-BY-NC-ND 4.0
+# Initial date: Sep 20, 2015
+# Contents:     Use this to compile an ECMAScript 2015 file, with 'import' and 'export'
+#               syntax, into an ECMAScript 5 file with 'require' and 'modules' syntax.
+#
+# Example:      "Usage: exim sourcedir destdir filename"
+#
+#==============================================================================
+if [ $# -lt 2 ]
+then
+  echo "Usage: exim sourcedir destdir filename"
+  exit
+fi
+
+# where is this bash script?
+THIS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+echo $THIS_DIR
+
+# execute
+node --use_strict $THIS_DIR/src/rewrite.js $1 $2 $3

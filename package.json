@@ -1,0 +1,15 @@
+{
+  "name": "exim",
+  "version": "1.0.0",
+  "description": "Convert ES2015 import/export syntax to nodejs require/modules syntax",
+  "private": true,
+  "main": "./src/rewrite.js",
+  "scripts": {
+    "build": "node --use_strict ./src/rewrite.js ./test/src/main.js ../es5/exim/test/src main.js",
+    "test":  "node --use_strict ../es5/exim/test/src/main.js"
+  },
+  "author": "Joe Honton",
+  "license": "CC-BY-NC-ND 4.0",
+  "dependencies": {
+  }
+}
